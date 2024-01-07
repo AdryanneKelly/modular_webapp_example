@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:modular_webapp_example/app/modules/dashboard/dashboard_page.dart';
 import 'package:modular_webapp_example/app/modules/home/home_page.dart';
 import 'package:modular_webapp_example/app/modules/profile/profile_page.dart';
 import 'package:modular_webapp_example/app/modules/settings/settings_page.dart';
@@ -17,6 +18,7 @@ class AppModule extends Module {
         AppRoutes.profilePage,
         child: (_) => const ProfilePage(color: Colors.red, title: 'Profile'),
       ),
+      ChildRoute(AppRoutes.dashboardPage, child: (_) => const DashboardPage()),
       ChildRoute(AppRoutes.settingsPage, child: (_) => const SettingsPage()),
     ]);
     // r.child(

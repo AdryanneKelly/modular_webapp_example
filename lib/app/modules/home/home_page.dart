@@ -14,8 +14,8 @@ class HomePage extends StatelessWidget {
           children: [
             ListTile(
               title: const Text('Home page'),
-              onTap: () => Modular.to.navigate(AppRoutes.home),
-              selected: Modular.to.path.endsWith(AppRoutes.home),
+              onTap: () => Modular.to.navigate(AppRoutes.dashboardPage),
+              selected: Modular.to.path.endsWith(AppRoutes.dashboardPage),
             ),
             ListTile(
               title: const Text('Profile'),
