@@ -10,19 +10,21 @@ class HomePage extends StatelessWidget {
     final leading = SizedBox(
       width: MediaQuery.of(context).size.width * 0.3,
       child: NavigationListener(builder: (context, child) {
-        return Column(
-          children: [
-            ListTile(
-              title: const Text('Home page'),
-              onTap: () => Modular.to.navigate(AppRoutes.dashboardPage),
-              selected: Modular.to.path.endsWith(AppRoutes.dashboardPage),
-            ),
-            ListTile(
-              title: const Text('Profile'),
-              onTap: () => Modular.to.navigate(AppRoutes.profilePage),
-              selected: Modular.to.path.endsWith(AppRoutes.profilePage),
-            ),
-          ],
+        return Expanded(
+          child: Column(
+            children: [
+              ListTile(
+                title: const Text('Home page'),
+                onTap: () => Modular.to.navigate(AppRoutes.dashboardPage),
+                selected: Modular.to.path.endsWith(AppRoutes.dashboardPage),
+              ),
+              ListTile(
+                title: const Text('Profile'),
+                onTap: () => Modular.to.navigate(AppRoutes.profilePage),
+                selected: Modular.to.path.endsWith(AppRoutes.profilePage),
+              ),
+            ],
+          ),
         );
       }),
     );
@@ -37,9 +39,9 @@ class HomePage extends StatelessWidget {
       ),
       body: Row(
         children: [
-          leading,
+          Expanded(flex: 1, child: leading),
           Container(width: 2, color: Colors.black45),
-          const Expanded(child: RouterOutlet()),
+          const Expanded(flex: 4, child: RouterOutlet()),
         ],
       ),
     );
